@@ -13,10 +13,12 @@ function login(user) {
     const headers = {
         'Content-Type': 'application/json'        
     }
-    axios.post(url, { username: user.username, password: user.password}, { headers }).then(res => { 
+    return axios.post(url, { username: user.username, password: user.password}, { headers }).then(res => {                
         localStorage.setItem('token', res.data.payload)
         window.location.href="/bubbles"
-    })    
+    }).catch(error => {
+        return error.response.data.error
+    })
 }
 
 function logout() {        

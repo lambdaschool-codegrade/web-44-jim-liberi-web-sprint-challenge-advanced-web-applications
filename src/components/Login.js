@@ -12,12 +12,13 @@ const Login = () => {
   const [error, setError] = useState('')
   //replace with error state
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if(inputs.username === '' && inputs.password === '') {
       setError('Username or Password not valid.');
     } else {
-      axiosWithAuth.login(inputs);
+      const response = await axiosWithAuth.login(inputs);
+      setError(response)      
     }
   }
 
