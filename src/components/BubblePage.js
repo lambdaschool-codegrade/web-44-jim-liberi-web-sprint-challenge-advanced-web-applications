@@ -23,7 +23,7 @@ const BubblePage = () => {
   const saveEdit = async (editColor) => {
     const updatedColor = await fetchColorService.saveEdit(editColor)
     setColors(colors.map(item => {
-      return item.id === updatedColor.id ? {...item, color: updatedColor.color, hex: updatedColor.code} : item
+      return item.id === updatedColor.id ? {...item, color: updatedColor.color, code: { hex: updatedColor.code}} : item
     }))    
   };
 
