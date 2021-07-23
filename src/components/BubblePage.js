@@ -2,20 +2,30 @@ import React, { useEffect, useState } from "react";
 
 import Bubbles from "./Bubbles";
 import ColorList from "./ColorList";
-import fetchColorService from '../services/fetchColorService';
+import {fetchColorService} from '../services/fetchColorService';
 
 const BubblePage = () => {
   const [colors, setColors] = useState([]);
   const [editing, setEditing] = useState(false);
+
+  useEffect(() => {
+    async function fetchColors() {
+      let response = await fetchColorService.fetchColors()
+      setColors(response)
+    }
+    fetchColors()
+  }, [])  
 
   const toggleEdit = (value) => {
     setEditing(value);
   };
 
   const saveEdit = (editColor) => {
+    console.log(editColor)
   };
 
   const deleteColor = (colorToDelete) => {
+    console.log(colorToDelete)
   };
 
   return (

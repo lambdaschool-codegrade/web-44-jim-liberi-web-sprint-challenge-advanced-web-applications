@@ -5,7 +5,7 @@ import axios from "axios";
 
 export const axiosWithAuth = {
     login,
-    logout
+    logout    
 }
 
 function login(user) {
