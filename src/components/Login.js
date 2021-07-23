@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { axiosWithAuth } from "../helpers/axiosWithAuth";
-
+import { useHistory } from "react-router";
 const Login = () => {
   // make a post request to retrieve a token from the api
   // when you have handled the token, navigate to the BubblePage route
@@ -12,13 +12,19 @@ const Login = () => {
   const [error, setError] = useState('')
   //replace with error state
 
+  const history = useHistory()
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     if(inputs.username === '' && inputs.password === '') {
       setError('Username or Password not valid.');
     } else {
       const response = await axiosWithAuth.login(inputs);
-      setError(response)      
+      if (response === "success") {
+        history.push('/bubbles')
+      } else {
+        setError(response)      
+      }      
     }
   }
 

@@ -15,7 +15,7 @@ function login(user) {
     }
     return axios.post(url, { username: user.username, password: user.password}, { headers }).then(res => {                
         localStorage.setItem('token', res.data.payload)
-        window.location.href="/bubbles"
+        return "success"
     }).catch(error => {
         return error.response.data.error
     })
