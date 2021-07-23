@@ -21,11 +21,11 @@ const BubblePage = () => {
   };
 
   const saveEdit = (editColor) => {
-    console.log(editColor)
+    fetchColorService.saveEdit(editColor)
   };
 
   const deleteColor = (colorToDelete) => {
-    console.log(colorToDelete)
+    fetchColorService.deleteColor(colorToDelete)
   };
 
   return (
