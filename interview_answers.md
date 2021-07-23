@@ -13,4 +13,4 @@ Servers are responsible for processing and answering incoming requests.  A page 
 
 
 4. Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
-PUT, POST, GET, and DELETE.
+Create, read, update and delete or used as PUT, POST, GET, and DELETE.
