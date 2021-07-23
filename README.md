@@ -16,7 +16,7 @@ In this project you will create a login page and request a token from the server
 
 ## Instructions
 
-### Task 1: Project Setup
+### Task 1: Project Setup - DONE
 
 * [ ] Fork and clone this repository.
 * [ ] Create a new branch with the 
