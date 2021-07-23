@@ -92,7 +92,7 @@ const correctCredientials = {
 
 
 function authenticator(req) {
-  const { authorization } = req.headers.map;
+  const { authorization } = req.headers.map;  
   return (authorization === correctCredientials.token);
 }
 
@@ -115,7 +115,7 @@ export const handlers = [
     }
   }),
 
-  rest.post(`${urlBase}/logout`, (req, res, ctx) => {
+  rest.post(`${urlBase}/logout`, (req, res, ctx) => {    
     if (authenticator(req)) {
       return res(
         ctx.status(200),
