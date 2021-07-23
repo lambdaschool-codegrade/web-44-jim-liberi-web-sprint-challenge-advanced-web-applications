@@ -17,7 +17,7 @@ const saveEdit = (item) => {
         return config;
     })
     return axios.put(`http://localhost:5000/api/colors/${item.id}`, { id: item.id, color: item.color, code: item.code.hex}).then(res => {
-        return res
+        return res.data
     })
 }
 
